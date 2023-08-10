@@ -1,0 +1,57 @@
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+
+body {
+    background-color: #aaa;
+}
+
+.container {
+    .headerContainer {
+        height: 200px;
+        // border: 1px solid #f00;
+        background-color: #000;
+        color: #fff;
+        position: relative;
+
+        .title {
+            text-decoration: underline;
+            padding: 15px;
+        }
+
+        .navbar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #111;
+
+            display: flex;
+
+            .navlink {
+                background-color: #111;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                padding: 15px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: #222;
+                }
+            }
+        }
+    }
+
+    .contentContainer {
+        padding: 15px;
+        height: 200vh;
+    }
+}

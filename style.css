@@ -1,0 +1,48 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+}
+
+body {
+  background-color: #aaa;
+}
+
+.container .headerContainer {
+  height: 200px;
+  background-color: #000;
+  color: #fff;
+  position: relative;
+}
+.container .headerContainer .title {
+  text-decoration: underline;
+  padding: 15px;
+}
+.container .headerContainer .navbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #111;
+  display: flex;
+}
+.container .headerContainer .navbar .navlink {
+  background-color: #111;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+}
+.container .headerContainer .navbar .navlink:hover {
+  background-color: #222;
+}
+.container .contentContainer {
+  padding: 15px;
+  height: 200vh;
+}/*# sourceMappingURL=style.css.map */
