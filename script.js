@@ -1,28 +1,62 @@
-window.onload = () => {
-    // load navbar link page
-    document.querySelectorAll(".navlink").forEach(link => {
-        link.addEventListener("click", (event) => {
-            const className = event.currentTarget.className.split(" ")[1];
-            document.querySelector(".contentContainer").innerText = className.toUpperCase() + " PAGE";
-        });
-    });
+const header = document.querySelector(".siteHeader");
+const menuButton = document.querySelector(".menuButton");
+const navigation = document.querySelector(".navbar");
+const navLinks = [...document.querySelectorAll(".navlink")];
+const sections = [...document.querySelectorAll(".pageSection")];
+const year = document.querySelector("#currentYear");
 
-    // sticky calculation
-    const navbar = document.querySelector(".navbar");
-    const sticky = navbar.offsetTop;
-    console.log(sticky);
-    window.onscroll = () => {
-        if (window.pageYOffset >= sticky) {
-            navbar.style.cssText = `
-                position: fixed;
-                top: 0;
-            `;
-        } else {
-            navbar.style.cssText = `
-                position: absolute;
-                top: ${sticky}px;
-            `;
-        }
-    };
+year.textContent = new Date().getFullYear();
+
+const closeMenu = () => {
+    navigation.classList.remove("isOpen");
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute("aria-label", "Open navigation menu");
 };
 
+menuButton.addEventListener("click", () => {
+    const isOpen = navigation.classList.toggle("isOpen");
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+    menuButton.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu",
+    );
+});
+
+navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+        navLinks.forEach((item) => item.classList.remove("isActive"));
+        link.classList.add("isActive");
+        closeMenu();
+    });
+});
+
+const updateActiveSection = () => {
+    const currentSection = sections.reduce((activeSection, section) => {
+        const distance = Math.abs(section.getBoundingClientRect().top - 110);
+        return distance < activeSection.distance
+            ? { section, distance }
+            : activeSection;
+    }, { section: sections[0], distance: Number.POSITIVE_INFINITY });
+
+    navLinks.forEach((link) => {
+        link.classList.toggle(
+            "isActive",
+            link.dataset.section === currentSection.section.id,
+        );
+    });
+
+    header.classList.toggle("isScrolled", window.scrollY > 12);
+};
+
+window.addEventListener("scroll", updateActiveSection, { passive: true });
+document.addEventListener("click", (event) => {
+    if (
+        navigation.classList.contains("isOpen") &&
+        !navigation.contains(event.target) &&
+        !menuButton.contains(event.target)
+    ) {
+        closeMenu();
+    }
+});
+
+updateActiveSection();

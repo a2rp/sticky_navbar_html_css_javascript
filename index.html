@@ -1,25 +1,152 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>a2rp: Sticky Navbar</title>
+        <meta
+            name="description"
+            content="A responsive sticky navigation pattern built with HTML, CSS, and JavaScript."
+        />
+        <meta property="og:title" content="Sticky Navbar" />
+        <meta
+            property="og:description"
+            content="A responsive sticky navigation pattern built with HTML, CSS, and JavaScript."
+        />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:url"
+            content="https://a2rp.github.io/sticky_navbar_html_css_javascript/"
+        />
+        <meta
+            property="og:image"
+            content="https://a2rp.github.io/sticky_navbar_html_css_javascript/preview.png"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Sticky Navbar" />
+        <meta
+            name="twitter:description"
+            content="A responsive sticky navigation pattern built with HTML, CSS, and JavaScript."
+        />
+        <meta
+            name="twitter:image"
+            content="https://a2rp.github.io/sticky_navbar_html_css_javascript/preview.png"
+        />
+        <link rel="icon" href="public/favicon.ico" />
         <link rel="stylesheet" href="style.css" />
-        <!-- <link rel="stylesheet" href="styles.css" /> -->
         <script src="script.js" defer></script>
+        <title>Sticky Navbar | Ashish Ranjan</title>
     </head>
     <body>
-        <div class="container">
-            <div class="headerContainer">
-                <div class="title">a2rp: Sticky Navbar</div>
-                <div class="navbar">
-                    <div class="navlink home">Home</div>
-                    <div class="navlink about">About</div>
-                    <div class="navlink contact">Contact</div>
-                    <div class="navlink services">Services</div>
-                </div>
+        <header class="siteHeader">
+            <div class="headerInner">
+                <a class="brand" href="#home" aria-label="Sticky navbar home">
+                    <img src="public/logo.png" alt="" />
+                    <span>
+                        <strong>Sticky Navbar</strong>
+                        <small>HTML, CSS and JavaScript</small>
+                    </span>
+                </a>
+
+                <button
+                    class="menuButton"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="siteNavigation"
+                    aria-label="Open navigation menu"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav class="navbar" id="siteNavigation" aria-label="Primary navigation">
+                    <a class="navlink isActive" href="#home" data-section="home">Home</a>
+                    <a class="navlink" href="#about" data-section="about">About</a>
+                    <a class="navlink" href="#contact" data-section="contact">Contact</a>
+                    <a class="navlink" href="#services" data-section="services">Services</a>
+                </nav>
             </div>
-            <div class="contentContainer">HOME PAGE</div>
-        </div>
+        </header>
+
+        <main>
+            <section class="heroSection pageSection" id="home">
+                <div class="heroContent">
+                    <p class="eyebrow">FRONTEND PATTERN</p>
+                    <h1>Navigation that stays in reach.</h1>
+                    <p>
+                        A small, reusable sticky navbar pattern with clear active
+                        states, responsive behavior, and a focused visual system.
+                    </p>
+                    <a class="primaryButton" href="#about">Explore the pattern <span aria-hidden="true">↓</span></a>
+                </div>
+                <div class="heroVisual" role="img" aria-label="Abstract architectural background"></div>
+            </section>
+
+            <section class="contentSection pageSection" id="about">
+                <div class="sectionHeading">
+                    <p class="eyebrow">ABOUT THE DEMO</p>
+                    <h2>Simple structure, useful behavior.</h2>
+                </div>
+                <div class="infoGrid">
+                    <article class="infoCard">
+                        <span class="cardNumber">01</span>
+                        <h3>Sticky positioning</h3>
+                        <p>The header remains available while the page content scrolls.</p>
+                    </article>
+                    <article class="infoCard">
+                        <span class="cardNumber">02</span>
+                        <h3>Active sections</h3>
+                        <p>Each link moves to a section and keeps the current destination clear.</p>
+                    </article>
+                    <article class="infoCard">
+                        <span class="cardNumber">03</span>
+                        <h3>Mobile ready</h3>
+                        <p>The compact menu keeps the same navigation usable on small screens.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="contentSection pageSection accentSection" id="contact">
+                <div class="sectionHeading">
+                    <p class="eyebrow">CONTACT</p>
+                    <h2>Keep the conversation close.</h2>
+                </div>
+                <p class="sectionLead">
+                    This section demonstrates how a sticky navigation pattern can sit
+                    above real page content without distracting from it.
+                </p>
+                <a class="secondaryButton" href="mailto:ash.ranjan09@gmail.com">Send a message <span aria-hidden="true">↗</span></a>
+            </section>
+
+            <section class="contentSection pageSection" id="services">
+                <div class="sectionHeading">
+                    <p class="eyebrow">SERVICES</p>
+                    <h2>Patterns for focused interfaces.</h2>
+                </div>
+                <div class="serviceList">
+                    <div><span>01</span><strong>Responsive layout systems</strong><small>Clear foundations for every screen size.</small></div>
+                    <div><span>02</span><strong>Reusable navigation</strong><small>Simple patterns that scale with content.</small></div>
+                    <div><span>03</span><strong>Accessible interactions</strong><small>Visible focus, semantic controls, and useful states.</small></div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="siteFooter">
+            <p>
+                Copyright &copy; <span id="currentYear"></span>
+                <a href="https://www.ashishranjan.net/" target="_blank" rel="noopener noreferrer">Ashish Ranjan</a>
+            </p>
+            <div class="footerLinks" aria-label="Social and support links">
+                <a href="https://www.ashishranjan.net/" target="_blank" rel="noopener noreferrer" aria-label="Portfolio" title="Portfolio">Web</a>
+                <a href="https://github.com/a2rp" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">GH</a>
+                <a href="https://codepen.io/ash1198" target="_blank" rel="noopener noreferrer" aria-label="CodePen" title="CodePen">CP</a>
+                <a href="https://www.linkedin.com/in/aashishranjan" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">in</a>
+                <a href="https://www.facebook.com/theash.ashish/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">f</a>
+                <a href="https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">YT</a>
+                <a href="https://a2rp-donation-page.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Support" title="Support">S</a>
+                <a href="https://buymeacoffee.com/a2rp" target="_blank" rel="noopener noreferrer" aria-label="Buy Me a Coffee" title="Buy Me a Coffee">BC</a>
+                <a href="https://patreon.com/a2rp" target="_blank" rel="noopener noreferrer" aria-label="Patreon" title="Patreon">P</a>
+            </div>
+        </footer>
     </body>
 </html>
