@@ -471,3 +471,62 @@ h2 {
         justify-content: flex-start;
     }
 }
+.iconSprite {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.footerLinks .linkIcon {
+    width: 15px;
+    height: 15px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.goTopButton {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    z-index: 15;
+    display: none;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--background);
+    background: var(--accent);
+    cursor: pointer;
+    transition: border-color 160ms ease, box-shadow 160ms ease, text-shadow 160ms ease;
+}
+
+.goTopButton.isVisible {
+    display: grid;
+}
+
+.goTopButton:hover {
+    border-color: var(--accent-soft);
+    box-shadow: 0 0 20px rgba(120, 212, 209, 0.28);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.45);
+}
+
+.goTopButton .linkIcon {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+@media (max-width: 520px) {
+    .goTopButton {
+        right: 16px;
+        bottom: 16px;
+    }
+}

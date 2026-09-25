@@ -8,8 +8,8 @@ A small, responsive sticky navigation pattern built with semantic HTML, modern C
 - Smooth section navigation for Home, About, Contact, and Services
 - Responsive mobile menu with outside-click closing
 - Local background, logo, favicon, and preview assets
-- Icon-style social and support links in the footer
-- Dynamic copyright year
+- Icon-only social, support, and email links in the footer
+- Dynamic copyright year and floating go-to-top control
 
 ## Tech stack
 
