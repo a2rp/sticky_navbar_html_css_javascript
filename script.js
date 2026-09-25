@@ -60,3 +60,15 @@ document.addEventListener("click", (event) => {
 });
 
 updateActiveSection();
+const goTopButton = document.querySelector(".goTopButton");
+
+const updateGoTopButton = () => {
+    goTopButton.classList.toggle("isVisible", window.scrollY > 420);
+};
+
+goTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+window.addEventListener("scroll", updateGoTopButton, { passive: true });
+updateGoTopButton();
